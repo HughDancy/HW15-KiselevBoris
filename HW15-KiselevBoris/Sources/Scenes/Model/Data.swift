@@ -5,4 +5,11 @@
 //  Created by Борис Киселев on 19.06.2022.
 //
 
-import Foundation
+import UIKit
+
+struct Data {
+    var image: [UIImage?]
+    var text: [String]
+    var secondText: [String?]
+}
+
