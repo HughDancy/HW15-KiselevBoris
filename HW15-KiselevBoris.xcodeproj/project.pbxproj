@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		D8557E14285F6D5A00032E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E13285F6D5A00032E0B /* AppDelegate.swift */; };
-		D8557E16285F6D5A00032E0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E15285F6D5A00032E0B /* SceneDelegate.swift */; };
 		D8557E18285F6D5A00032E0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E17285F6D5A00032E0B /* ViewController.swift */; };
 		D8557E1B285F6D5A00032E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8557E19285F6D5A00032E0B /* Main.storyboard */; };
 		D8557E1D285F6D5B00032E0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8557E1C285F6D5B00032E0B /* Assets.xcassets */; };
 		D8557E20285F6D5B00032E0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8557E1E285F6D5B00032E0B /* LaunchScreen.storyboard */; };
+		D8557E2F285F6EDA00032E0B /* TableVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E2E285F6EDA00032E0B /* TableVIew.swift */; };
+		D8557E31285F6EE300032E0B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E30285F6EE300032E0B /* Data.swift */; };
+		D8557E33285F6EEF00032E0B /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8557E32285F6EEF00032E0B /* TableModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8557E10285F6D5A00032E0B /* HW15-KiselevBoris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW15-KiselevBoris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8557E13285F6D5A00032E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8557E15285F6D5A00032E0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8557E17285F6D5A00032E0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8557E1A285F6D5A00032E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8557E1C285F6D5B00032E0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8557E1F285F6D5B00032E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8557E21285F6D5B00032E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8557E2E285F6EDA00032E0B /* TableVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVIew.swift; sourceTree = "<group>"; };
+		D8557E30285F6EE300032E0B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		D8557E32285F6EEF00032E0B /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,73 @@
 		D8557E12285F6D5A00032E0B /* HW15-KiselevBoris */ = {
 			isa = PBXGroup;
 			children = (
-				D8557E13285F6D5A00032E0B /* AppDelegate.swift */,
-				D8557E15285F6D5A00032E0B /* SceneDelegate.swift */,
-				D8557E17285F6D5A00032E0B /* ViewController.swift */,
+				D8557E28285F6DD500032E0B /* Sources */,
+				D8557E27285F6DC500032E0B /* Resources */,
+			);
+			path = "HW15-KiselevBoris";
+			sourceTree = "<group>";
+		};
+		D8557E27285F6DC500032E0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D8557E19285F6D5A00032E0B /* Main.storyboard */,
 				D8557E1C285F6D5B00032E0B /* Assets.xcassets */,
 				D8557E1E285F6D5B00032E0B /* LaunchScreen.storyboard */,
 				D8557E21285F6D5B00032E0B /* Info.plist */,
 			);
-			path = "HW15-KiselevBoris";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D8557E28285F6DD500032E0B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E2A285F6DED00032E0B /* Scenes */,
+				D8557E29285F6DDC00032E0B /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D8557E29285F6DDC00032E0B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E13285F6D5A00032E0B /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D8557E2A285F6DED00032E0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E2D285F6E0900032E0B /* Controller */,
+				D8557E2C285F6E0400032E0B /* View */,
+				D8557E2B285F6DFE00032E0B /* Model */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D8557E2B285F6DFE00032E0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E30285F6EE300032E0B /* Data.swift */,
+				D8557E32285F6EEF00032E0B /* TableModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8557E2C285F6E0400032E0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E2E285F6EDA00032E0B /* TableVIew.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8557E2D285F6E0900032E0B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D8557E17285F6D5A00032E0B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8557E18285F6D5A00032E0B /* ViewController.swift in Sources */,
+				D8557E2F285F6EDA00032E0B /* TableVIew.swift in Sources */,
 				D8557E14285F6D5A00032E0B /* AppDelegate.swift in Sources */,
-				D8557E16285F6D5A00032E0B /* SceneDelegate.swift in Sources */,
+				D8557E31285F6EE300032E0B /* Data.swift in Sources */,
+				D8557E33285F6EEF00032E0B /* TableModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9KN879RV4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW15-KiselevBoris/Info.plist";
+				INFOPLIST_FILE = "HW15-KiselevBoris/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +381,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9KN879RV4D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "HW15-KiselevBoris/Info.plist";
+				INFOPLIST_FILE = "HW15-KiselevBoris/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
