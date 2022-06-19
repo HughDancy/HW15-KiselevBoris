@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let firstViewController = ViewController()
+        let firstViewController = TableViewController()
         let firstNavigationController = UINavigationController(rootViewController: firstViewController)
         firstViewController.title = "Настройки"
         firstViewController.navigationItem.hidesSearchBarWhenScrolling = true
