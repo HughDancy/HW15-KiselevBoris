@@ -9,9 +9,7 @@ import UIKit
 
 class TableView: UIView {
     // MARK: - Private properties
-    
-    private lazy var something = TableModel()
-    private lazy var model = something.createModel()
+    private lazy var model = TableModel.createModel()
     
     
     // MARK: - View
