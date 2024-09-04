@@ -10,14 +10,12 @@ import UIKit
 class TableView: UIView {
     // MARK: - Private properties
     private lazy var model = TableModel.createModel()
-    
+
     
     // MARK: - View
-    
     lazy var settingsTable = UITableView(frame: .zero, style: UITableView.Style.insetGrouped)
     
-    //MARK: - View setup
-    
+    // MARK: - View setup
     private func setTableView() {
         settingsTable.delegate = self
         settingsTable.dataSource = self
@@ -26,7 +24,7 @@ class TableView: UIView {
         settingsTable.tableHeaderView?.backgroundColor = UIColor(displayP3Red: 0.96, green: 0.96, blue: 0.98, alpha: 1)
     }
     
-    //MARK: - Initials
+    // MARK: - Initials
     init() {
         super.init(frame: .zero)
         commonInit()
@@ -43,12 +41,10 @@ class TableView: UIView {
         settingsTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    //MARK: - SetupHierarchy and Layout
-    
+    // MARK: - SetupHierarchy and Layout
     func setupHierarchy() {
         addSubview(settingsTable)
         setTableView()
-        //        setupData()
     }
     
     func setupLayout() {
@@ -60,9 +56,8 @@ class TableView: UIView {
     }
 }
 
-    //MARK: - Extension - Cell's settings
-
-extension TableView: UITableViewDataSource, UITableViewDelegate {
+    // MARK: - Extension - Cell's settings
+extension TableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return model.count
@@ -82,7 +77,6 @@ extension TableView: UITableViewDataSource, UITableViewDelegate {
         
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 2
-        cell.clipsToBounds = true
         
         let switchForCell = UISwitch(frame: .zero)
         switchForCell.setOn(false, animated: true)
@@ -98,7 +92,9 @@ extension TableView: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-    
+}
+
+extension TableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         settingsTable.deselectRow(at: indexPath, animated: true)
         print("Нажата ячейка \(model[indexPath.section].text[indexPath.row])")
