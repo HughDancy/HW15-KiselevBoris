@@ -8,9 +8,7 @@
 import UIKit
 
 class TableViewController: UIViewController {
-    
-    var model: TableModel?
-    
+
     private var tableView: TableView? {
         guard isViewLoaded else { return nil }
         return view as? TableView
@@ -18,11 +16,7 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor(displayP3Red: 0.96, green: 0.96, blue: 0.98, alpha: 1)
-        
-        view = TableView()
-        model = TableModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {

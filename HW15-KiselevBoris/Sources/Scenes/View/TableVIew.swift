@@ -9,9 +9,8 @@ import UIKit
 
 class TableView: UIView {
     // MARK: - Private properties
-    private lazy var model = TableModel.createModel()
+    var model: [Data]?
 
-    
     // MARK: - View
     lazy var settingsTable = UITableView(frame: .zero, style: UITableView.Style.insetGrouped)
     
@@ -60,20 +59,20 @@ class TableView: UIView {
 extension TableView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return model.count
+        return model?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model[section].text.count
+        model?[section].text.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         
-        content.image = model[indexPath.section].image[indexPath.row]
-        content.text = model[indexPath.section].text[indexPath.row]
-        content.secondaryText = model[indexPath.section].secondText[indexPath.row]
+        content.image = model?[indexPath.section].image[indexPath.row]
+        content.text = model?[indexPath.section].text[indexPath.row]
+        content.secondaryText = model?[indexPath.section].secondText[indexPath.row]
         
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 2
@@ -97,7 +96,7 @@ extension TableView: UITableViewDataSource {
 extension TableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         settingsTable.deselectRow(at: indexPath, animated: true)
-        print("Нажата ячейка \(model[indexPath.section].text[indexPath.row])")
+        print("Нажата ячейка \(model?[indexPath.section].text[indexPath.row] ?? "")")
     }
 }
 
